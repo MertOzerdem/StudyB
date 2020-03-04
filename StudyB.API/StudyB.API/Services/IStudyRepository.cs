@@ -12,9 +12,17 @@ namespace StudyB.API.Services
         User GetUser(Guid Id);
         IEnumerable<User> GetUsers();
         Chatroom GetChatroom(Guid Id);
+
+        // CHATROOM RELATED FUNC
         IEnumerable<Chatroom> GetChatrooms();
         Chatroom GetChatroomWithContent(Guid Id);
         //List<ChatroomsWithContentDto> GetChatroomsWithContent();
         List<Chatroom> GetChatroomsWithContent();
+
+        // MESSAGES RELATED FUNC
+        List<Message> GetMessages();
+        List<Message> GetChatroomMessages(Guid ChatroomId);
+
+
     }
 }

@@ -89,6 +89,20 @@ namespace StudyB.API.Services
             return null;
         }
 
+        public List<Message> GetMessages()
+        {
+            var messages = this.context.Messages.OrderBy(o => o.DateOfPost).ToList<Message>();
+
+            return messages;
+        }
+
+        public List<Message> GetChatroomMessages(Guid ChatroomId)
+        {
+            var messages = this.context.Messages.Where(m => m.ChatroomId == ChatroomId).OrderBy(o => o.DateOfPost).ToList();
+
+            return messages;
+        }
+
         public void Dispose()
         {
             Dispose(true);
