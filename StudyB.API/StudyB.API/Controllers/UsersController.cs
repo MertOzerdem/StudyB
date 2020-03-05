@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using Microsoft.AspNetCore.Mvc;
+using StudyB.API.Entities;
 using StudyB.API.Models;
 using StudyB.API.Services;
 using System;
@@ -31,11 +32,23 @@ namespace StudyB.API.Controllers
             return Ok(this.mapper.Map<IEnumerable<UserDto>>(usersFromRepo));
         }
 
-        [HttpGet("{userId}")]
+        [HttpGet("{userId}", Name = "GetAuthor")]
         public ActionResult GetUser(Guid userId)
         {
             var userFromRepo = this.studyRepository.GetUser(userId);
             return Ok(this.mapper.Map<UserDto>(userFromRepo));
+        }
+
+        [HttpPost]
+        public ActionResult<UserDto> CreateUser(UserForCreationDto user)
+        {
+            var userEntity = this.mapper.Map<User>(user);
+            this.studyRepository.AddUser(userEntity);
+            this.studyRepository.Save();
+
+            var userToReturn = this.mapper.Map<UserDto>(userEntity);
+
+            return CreatedAtRoute("GetAuthor", new { userId = userToReturn.Id }, userToReturn);
         }
 
     }

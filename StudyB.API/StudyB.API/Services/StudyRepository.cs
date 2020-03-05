@@ -17,7 +17,10 @@ namespace StudyB.API.Services
         {
             this.context = context;
         }
-
+        /// <summary>
+        /// USER RELATED FUNC
+        /// </summary>
+        /// 
         public IEnumerable<User> GetUsers()
         {
             return this.context.Users.ToList<User>();
@@ -33,6 +36,22 @@ namespace StudyB.API.Services
             return this.context.Users.Where(u => u.Id == Id).FirstOrDefault();
         }
 
+        public void AddUser(User user)
+        {
+            if (user == null)
+            {
+                throw new ArgumentNullException(nameof(user));
+            }
+
+            user.Id = Guid.NewGuid();
+
+            this.context.Users.Add(user);
+        }
+
+        /// <summary>
+        /// CHATROOM RELATED FUNC
+        /// </summary>
+        ///
         public IEnumerable<Chatroom> GetChatrooms()
         {
             return this.context.Chatrooms.ToList<Chatroom>();
@@ -101,6 +120,11 @@ namespace StudyB.API.Services
             var messages = this.context.Messages.Where(m => m.ChatroomId == ChatroomId).OrderBy(o => o.DateOfPost).ToList();
 
             return messages;
+        }
+
+        public bool Save()
+        {
+            return (this.context.SaveChanges() >= 0);
         }
 
         public void Dispose()

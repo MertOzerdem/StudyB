@@ -11,6 +11,7 @@ namespace StudyB.API.Profiles
         public UsersProfile()
         {
             CreateMap<Entities.User, Models.UserDto>();
+            CreateMap<Models.UserForCreationDto, Entities.User>();
         }
     }
 }

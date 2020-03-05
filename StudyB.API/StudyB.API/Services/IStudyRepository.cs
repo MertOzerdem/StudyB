@@ -9,9 +9,12 @@ namespace StudyB.API.Services
 {
     public interface IStudyRepository
     {
+        bool Save();
+        // USER RELATED FUNC
         User GetUser(Guid Id);
         IEnumerable<User> GetUsers();
         Chatroom GetChatroom(Guid Id);
+        void AddUser(User user);
 
         // CHATROOM RELATED FUNC
         IEnumerable<Chatroom> GetChatrooms();
