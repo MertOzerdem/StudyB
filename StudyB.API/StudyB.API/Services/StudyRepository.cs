@@ -177,6 +177,37 @@ namespace StudyB.API.Services
             return message;
         }
 
+        public bool AddUserChatroom(Guid chatroomId, Guid userId)
+        {
+            if (chatroomId == Guid.Empty)
+            {
+                throw new ArgumentNullException(nameof(chatroomId));
+            }
+
+            if (userId == Guid.Empty)
+            {
+                throw new ArgumentNullException(nameof(userId));
+            }
+
+            var userChatroom = new UserChatroom
+            {
+                ChatroomId = chatroomId,
+                UserId = userId
+            };
+
+            if (!this.context.UserChatrooms.Any(u => u.UserId == userChatroom.UserId)
+                && !this.context.UserChatrooms.Any(u => u.ChatroomId == userChatroom.ChatroomId))
+            {
+                this.context.UserChatrooms.Add(userChatroom);
+                return true;
+            }
+
+            return false;
+            // make query so that not any duplicate will be tried to saved
+
+            
+        }
+
         public bool Save()
         {
             return (this.context.SaveChanges() >= 0);

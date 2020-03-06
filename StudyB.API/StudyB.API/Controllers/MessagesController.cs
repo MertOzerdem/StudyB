@@ -60,8 +60,8 @@ namespace StudyB.API.Controllers
 
             var messageToReturn = this.mapper.Map<MessageDto>(messageEntity);
 
-            // fix this problem
-            //return CreatedAtAction("GetMessage", new {messageId = messageEntity.Id }
+            //fix this problem
+            //return CreatedAtAction("GetMessage", new { messageId = messageEntity.Id }
             //    , messageToReturn);
 
             return Ok(messageToReturn);

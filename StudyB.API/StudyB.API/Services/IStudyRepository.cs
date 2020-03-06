@@ -30,6 +30,7 @@ namespace StudyB.API.Services
         List<Message> GetChatroomMessages(Guid ChatroomId);
         Message GetMessages(Guid messageId);
 
-
+        // USERCHATROOM RELATED FUNC
+        bool AddUserChatroom(Guid chatroomId, Guid userId);
     }
 }
