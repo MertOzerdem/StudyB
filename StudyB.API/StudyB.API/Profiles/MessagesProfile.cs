@@ -11,6 +11,7 @@ namespace StudyB.API.Profiles
         public MessagesProfile()
         {
             CreateMap<Entities.Message, Models.MessageDto>();
+            CreateMap<Models.MessageForCreationDto, Entities.Message>();
         }
     }
 }

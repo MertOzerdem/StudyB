@@ -134,7 +134,29 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:5000/api/messages/c25ed015-3e14-440d-a7c0-7eeedc0cf32b",
+					"raw": "http://localhost:5000/api/chatrooms/c25ed015-3e14-440d-a7c0-7eeedc0cf32b/messages",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"chatrooms",
+						"c25ed015-3e14-440d-a7c0-7eeedc0cf32b",
+						"messages"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get a message",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5000/api/messages/9ca606d2-c909-46e6-ab6e-5f8616f083a6",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -143,7 +165,7 @@
 					"path": [
 						"api",
 						"messages",
-						"c25ed015-3e14-440d-a7c0-7eeedc0cf32b"
+						"9ca606d2-c909-46e6-ab6e-5f8616f083a6"
 					]
 				}
 			},
@@ -167,7 +189,7 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "[\r\n\t{\r\n\t    \"userName\": \"Sweeney\",\r\n\t    \"firstName\": \"Emerson\",\r\n\t    \"lastName\": \"Deleon\",\r\n\t    \"password\": \"(901) 468-3838\",\r\n    }\r\n]"
+					"raw": "{\r\n    \"userName\": \"Sybil\",\r\n    \"firstName\": \"Lindsey\",\r\n    \"lastName\": \"Constance\",\r\n    \"password\": \"(889) 504-2690\"\r\n\t\r\n}"
 				},
 				"url": {
 					"raw": "http://localhost:5000/api/users",
@@ -179,6 +201,45 @@
 					"path": [
 						"api",
 						"users"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create a message",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"text\": \"bunlar nasıl sorular? ben sana soruyomuyum ...\",\r\n    \"fileAddress\": null\r\n}"
+				},
+				"url": {
+					"raw": "http://localhost:5000/api/messages/ce446daa-5e35-4f2a-ab83-cf75cac4837e/users/8ded4df7-4355-41b0-9b44-a9de574bcc48/messages",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"messages",
+						"ce446daa-5e35-4f2a-ab83-cf75cac4837e",
+						"users",
+						"8ded4df7-4355-41b0-9b44-a9de574bcc48",
+						"messages"
 					]
 				}
 			},

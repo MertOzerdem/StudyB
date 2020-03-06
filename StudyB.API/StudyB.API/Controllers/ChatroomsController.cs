@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using Microsoft.AspNetCore.Mvc;
+using StudyB.API.Entities;
 using StudyB.API.Models;
 using StudyB.API.Services;
 using System;
@@ -33,8 +34,16 @@ namespace StudyB.API.Controllers
         public ActionResult GetChatroom(Guid chatroomId)
         {
             var chatroomFromRepo = this.studyRepository.GetChatroom(chatroomId);
-            var a = this.mapper.Map<ChatroomDto>(chatroomFromRepo);
+            //var a = this.mapper.Map<ChatroomDto>(chatroomFromRepo);
             return Ok(this.mapper.Map<ChatroomDto>(chatroomFromRepo));
+        }
+
+        [HttpGet("{chatroomId}/messages")]
+        public ActionResult GetChatroomMessages(Guid chatroomId)
+        {
+            var messages = this.studyRepository.GetChatroomMessages(chatroomId);
+
+            return Ok(this.mapper.Map<IEnumerable<MessageDto>>(messages));
         }
 
         [HttpGet("content")]
@@ -55,5 +64,7 @@ namespace StudyB.API.Controllers
 
             return Ok(this.mapper.Map<IEnumerable<ChatroomsWithContentDto>>(chatroomsFromRepo));
         }
+
+        
     }
 }

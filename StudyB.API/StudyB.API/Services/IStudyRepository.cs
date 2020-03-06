@@ -15,16 +15,20 @@ namespace StudyB.API.Services
         IEnumerable<User> GetUsers();
         Chatroom GetChatroom(Guid Id);
         void AddUser(User user);
+        bool UserExist(Guid userId);
 
         // CHATROOM RELATED FUNC
         IEnumerable<Chatroom> GetChatrooms();
         Chatroom GetChatroomWithContent(Guid Id);
         //List<ChatroomsWithContentDto> GetChatroomsWithContent();
         List<Chatroom> GetChatroomsWithContent();
+        bool ChatroomExist(Guid chatroomId);
+        void AddMessage(Guid chatroomId, Guid userId, Message message);
 
         // MESSAGES RELATED FUNC
         List<Message> GetMessages();
         List<Message> GetChatroomMessages(Guid ChatroomId);
+        Message GetMessages(Guid messageId);
 
 
     }

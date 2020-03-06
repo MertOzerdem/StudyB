@@ -48,6 +48,16 @@ namespace StudyB.API.Services
             this.context.Users.Add(user);
         }
 
+        public bool UserExist(Guid userId)
+        {
+            if (userId == Guid.Empty)
+            {
+                throw new ArgumentNullException(nameof(userId));
+            }
+
+            return this.context.Users.Any(u => u.Id == userId);
+        }
+
         /// <summary>
         /// CHATROOM RELATED FUNC
         /// </summary>
@@ -107,6 +117,40 @@ namespace StudyB.API.Services
             //return messages;
             return null;
         }
+        public bool ChatroomExist(Guid chatroomId)
+        {
+            if (chatroomId == Guid.Empty)
+            {
+                throw new ArgumentNullException(nameof(chatroomId));
+            }
+
+            return this.context.Chatrooms.Any(c => c.Id == chatroomId);
+        }
+
+        public void AddMessage(Guid chatroomId, Guid userId, Message message)
+        {
+            if (userId == Guid.Empty)
+            {
+                throw new ArgumentNullException(nameof(userId));
+            }
+
+            if (chatroomId == Guid.Empty)
+            {
+                throw new ArgumentNullException(nameof(chatroomId));
+            }
+
+            if (message == null)
+            {
+                throw new ArgumentNullException(nameof(message));
+            }
+
+            message.ChatroomId = chatroomId;
+            message.UserId = userId;
+            message.Id = Guid.NewGuid();
+            message.DateOfPost = DateTimeOffset.Now;
+
+            context.Messages.Add(message);
+        }
 
         public List<Message> GetMessages()
         {
@@ -120,6 +164,17 @@ namespace StudyB.API.Services
             var messages = this.context.Messages.Where(m => m.ChatroomId == ChatroomId).OrderBy(o => o.DateOfPost).ToList();
 
             return messages;
+        }
+
+        public Message GetMessages(Guid messageId)
+        {
+            if (messageId == Guid.Empty)
+            {
+                throw new ArgumentNullException(nameof(messageId));
+            }
+
+            var message = this.context.Messages.Where(m => m.Id == messageId).FirstOrDefault();
+            return message;
         }
 
         public bool Save()

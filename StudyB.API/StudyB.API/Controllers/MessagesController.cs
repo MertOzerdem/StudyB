@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using Microsoft.AspNetCore.Mvc;
+using StudyB.API.Entities;
 using StudyB.API.Models;
 using StudyB.API.Services;
 using System;
@@ -32,12 +33,38 @@ namespace StudyB.API.Controllers
             return Ok(this.mapper.Map<IEnumerable<MessageDto>>(messages));
         }
 
-        [HttpGet("{chatroomId}")]
-        public ActionResult GetChatroomMessages(Guid chatroomId)
+        [HttpGet("{messageId}", Name = "GetMessage")]
+        public ActionResult GetChatroomMessage(Guid messageId)
         {
-            var messages = this.studyRepository.GetChatroomMessages(chatroomId);
+            var message = this.studyRepository.GetMessages(messageId);
 
-            return Ok(this.mapper.Map<IEnumerable<MessageDto>>(messages));
+            return Ok(this.mapper.Map<MessageDto>(message));
+        }
+
+        [HttpPost("{chatroomId}/users/{userId}/messages")]
+        public ActionResult<MessageDto> CreateChatroomMessage(Guid chatroomId, Guid userId, MessageForCreationDto message)
+        {
+            if (!this.studyRepository.UserExist(userId))
+            {
+                return NotFound();
+            }
+
+            if (!this.studyRepository.ChatroomExist(chatroomId))
+            {
+                return NotFound();
+            }
+
+            var messageEntity = this.mapper.Map<Message>(message);
+            this.studyRepository.AddMessage(chatroomId, userId, messageEntity);
+            this.studyRepository.Save();
+
+            var messageToReturn = this.mapper.Map<MessageDto>(messageEntity);
+
+            // fix this problem
+            //return CreatedAtAction("GetMessage", new {messageId = messageEntity.Id }
+            //    , messageToReturn);
+
+            return Ok(messageToReturn);
         }
     }
 }
