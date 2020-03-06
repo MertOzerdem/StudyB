@@ -5,10 +5,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Controllers\" />
-  </ItemGroup>
-
-  <ItemGroup>
     <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="6.1.1" />
     <PackageReference Include="EntityFrameworkCore.Diagrams" Version="0.4.2" />
     <PackageReference Include="ErikEJ.EntityFrameworkCore.DgmlBuilder" Version="3.0.0" />
