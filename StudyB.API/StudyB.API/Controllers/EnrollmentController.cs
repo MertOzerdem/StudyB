@@ -22,7 +22,7 @@ namespace StudyB.API.Controllers
             this.mapper = mapper;
         }
 
-        [HttpPost("{chatroomId}/enroll/{userId}")]
+        [HttpPost("{chatroomId}/enrollChatroom/{userId}")]
         public ActionResult<ChatroomDto> EnrollChatroom(Guid chatroomId, Guid userId)
         {
 
@@ -41,7 +41,7 @@ namespace StudyB.API.Controllers
 
             if (returnValue == true)
             {
-                return Ok();
+                return NoContent();
             }
 
             return BadRequest();

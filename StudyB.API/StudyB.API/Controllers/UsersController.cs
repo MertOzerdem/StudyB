@@ -48,7 +48,9 @@ namespace StudyB.API.Controllers
 
             var userToReturn = this.mapper.Map<UserDto>(userEntity);
 
-            return CreatedAtRoute("GetAuthor", new { userId = userToReturn.Id }, userToReturn);
+            return CreatedAtRoute("GetAuthor", 
+                new { userId = userToReturn.Id }, 
+                userToReturn);
         }
 
         

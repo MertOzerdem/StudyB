@@ -189,7 +189,7 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"userName\": \"Sybil\",\r\n    \"firstName\": \"Lindsey\",\r\n    \"lastName\": \"Constance\",\r\n    \"password\": \"(889) 504-2690\"\r\n\t\r\n}"
+					"raw": "{\r\n    \"userName\": \"yeni\",\r\n    \"firstName\": \"user\",\r\n    \"lastName\": \"friendly\",\r\n    \"password\": \"(889) 504-2690\"\r\n\t\r\n}"
 				},
 				"url": {
 					"raw": "http://localhost:5000/api/users",
@@ -240,6 +240,74 @@
 						"users",
 						"8ded4df7-4355-41b0-9b44-a9de574bcc48",
 						"messages"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Enroll to a chatroom",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:5000/api/enroll/1acf8e02-9be4-428a-bd6b-8dce083bfac3/enrollChatroom/d28888e9-2ba9-473a-a40f-e38cb54f9b35",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"enroll",
+						"1acf8e02-9be4-428a-bd6b-8dce083bfac3",
+						"enrollChatroom",
+						"d28888e9-2ba9-473a-a40f-e38cb54f9b35"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create a chatroom",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"chatroomName\": \"New chatroom\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:5000/api/chatrooms",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"chatrooms"
 					]
 				}
 			},
