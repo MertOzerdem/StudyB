@@ -34,6 +34,7 @@ namespace StudyB.API
 
             services.AddScoped<IStudyRepository, StudyRepository>();
 
+
             services.AddDbContext<BuddyLibraryContext>(options =>
             {
                 options.UseSqlServer(
