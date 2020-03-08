@@ -30,7 +30,7 @@ namespace StudyB.API.Controllers
             return Ok(this.mapper.Map<IEnumerable<ChatroomDto>>(chatroomsFromRepo));
         }
 
-        [HttpGet("{chatroomId}")]
+        [HttpGet("{chatroomId}", Name ="GetChatroom")]
         public ActionResult GetChatroom(Guid chatroomId)
         {
             var chatroomFromRepo = this.studyRepository.GetChatroom(chatroomId);
@@ -65,6 +65,20 @@ namespace StudyB.API.Controllers
             return Ok(this.mapper.Map<IEnumerable<ChatroomsWithContentDto>>(chatroomsFromRepo));
         }
 
+        [HttpPost]
+        public ActionResult<ChatroomDto> CreateChatroom(ChatroomForCreationDto chatroom)
+        {
+            var chatroomEntity = this.mapper.Map<Chatroom>(chatroom);
+
+            this.studyRepository.AddChatroom(chatroomEntity);
+            this.studyRepository.Save();
+
+            var chatroomToReturn = this.mapper.Map<ChatroomDto>(chatroomEntity);
+
+            return CreatedAtRoute("GetChatroom", 
+                new { chatroomId = chatroomToReturn.Id },
+                chatroomToReturn);
+        }
         
     }
 }

@@ -127,6 +127,21 @@ namespace StudyB.API.Services
             return this.context.Chatrooms.Any(c => c.Id == chatroomId);
         }
 
+        public Chatroom AddChatroom(Chatroom chatroom)
+        {
+            if (chatroom == null)
+            {
+                throw new ArgumentNullException(nameof(chatroom));
+            }
+
+            chatroom.Id = Guid.NewGuid();
+            this.context.Chatrooms.Add(chatroom);
+            return chatroom;
+        }
+
+        //
+        // MESSAGES RELATED FUNC
+        //
         public void AddMessage(Guid chatroomId, Guid userId, Message message)
         {
             if (userId == Guid.Empty)

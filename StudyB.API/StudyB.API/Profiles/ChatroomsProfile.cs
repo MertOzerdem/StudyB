@@ -12,7 +12,7 @@ namespace StudyB.API.Profiles
         {
             CreateMap<Entities.Chatroom, Models.ChatroomDto>();
             CreateMap<Entities.Chatroom, Models.ChatroomsWithContentDto>();
-            
+            CreateMap<Models.ChatroomForCreationDto, Entities.Chatroom>();    
         }
     }
 }
