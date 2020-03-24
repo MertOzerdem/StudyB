@@ -40,3 +40,8 @@ C:\Users\m_e_r\OneDrive\Masaüstü\StudyB.API\StudyB.API\obj\Release\netcoreapp3
 C:\Users\m_e_r\OneDrive\Masaüstü\StudyB.API\StudyB.API\obj\Release\netcoreapp3.0\StudyB.API.csproj.CopyComplete
 C:\Users\m_e_r\OneDrive\Masaüstü\StudyB.API\StudyB.API\obj\Release\netcoreapp3.0\StudyB.API.dll
 C:\Users\m_e_r\OneDrive\Masaüstü\StudyB.API\StudyB.API\obj\Release\netcoreapp3.0\StudyB.API.pdb
+C:\Users\m_e_r\OneDrive\Masaüstü\StudyB.API\StudyB.API\bin\Release\netcoreapp3.0\libman.json
+C:\Users\m_e_r\OneDrive\Masaüstü\StudyB.API\StudyB.API\obj\Release\netcoreapp3.0\StudyB.API.csproj.CoreCompileInputs.cache
+C:\Users\m_e_r\OneDrive\Masaüstü\StudyB.API\StudyB.API\obj\Release\netcoreapp3.0\StudyB.API.genruntimeconfig.cache
+C:\Users\m_e_r\OneDrive\Masaüstü\StudyB.API\StudyB.API\obj\Release\netcoreapp3.0\StudyB.API.Properties.Resources.resources
+C:\Users\m_e_r\OneDrive\Masaüstü\StudyB.API\StudyB.API\obj\Release\netcoreapp3.0\StudyB.API.csproj.GenerateResource.cache

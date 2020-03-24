@@ -1,0 +1,84 @@
+24.03.2020 00:11:02	This log contains information about the import schema operation into project 'StudyB.Database' on computer 'DESKTOP-EREPUI3' by user 'm_e_r'.
+24.03.2020 00:11:02	Import of database schema has started.
+24.03.2020 00:11:07	Gathering database credentials
+24.03.2020 00:11:07	Gathering database options
+24.03.2020 00:11:07	Gathering users
+24.03.2020 00:11:07	Gathering roles
+24.03.2020 00:11:07	Gathering application roles
+24.03.2020 00:11:07	Gathering role memberships
+24.03.2020 00:11:07	Gathering filegroups
+24.03.2020 00:11:07	Gathering full-text catalogs
+24.03.2020 00:11:07	Gathering assemblies
+24.03.2020 00:11:07	Gathering certificates
+24.03.2020 00:11:07	Gathering asymmetric keys
+24.03.2020 00:11:07	Gathering symmetric keys
+24.03.2020 00:11:07	Gathering encrypted symmetric keys
+24.03.2020 00:11:07	Gathering schemas
+24.03.2020 00:11:07	Gathering XML schema collections
+24.03.2020 00:11:07	Gathering user-defined data types
+24.03.2020 00:11:07	Gathering user-defined types
+24.03.2020 00:11:07	Gathering table types
+24.03.2020 00:11:07	Gathering unique keys for table types
+24.03.2020 00:11:07	Gathering primary keys for table types
+24.03.2020 00:11:07	Gathering indexes for table types
+24.03.2020 00:11:07	Gathering check constraints for table types
+24.03.2020 00:11:07	Gathering default constraints for table types
+24.03.2020 00:11:07	Gathering partition functions
+24.03.2020 00:11:07	Gathering partition schemes
+24.03.2020 00:11:07	Gathering functions
+24.03.2020 00:11:07	Gathering encrypted functions
+24.03.2020 00:11:07	Gathering aggregates
+24.03.2020 00:11:07	Gathering procedures
+24.03.2020 00:11:07	Gathering encrypted procedures
+24.03.2020 00:11:07	Gathering tables
+24.03.2020 00:11:07	Gathering primary keys
+24.03.2020 00:11:07	Gathering unique constraints
+24.03.2020 00:11:07	Gathering foreign keys
+24.03.2020 00:11:07	Gathering default constraints
+24.03.2020 00:11:07	Gathering check constraints
+24.03.2020 00:11:07	Gathering views
+24.03.2020 00:11:07	Gathering encrypted views
+24.03.2020 00:11:07	Gathering indexes
+24.03.2020 00:11:07	Gathering statistics
+24.03.2020 00:11:07	Gathering full-text index stoplists
+24.03.2020 00:11:07	Gathering search property lists
+24.03.2020 00:11:07	Gathering search properties
+24.03.2020 00:11:07	Gathering full-text indexes
+24.03.2020 00:11:07	Gathering column store indexes
+24.03.2020 00:11:07	Gathering spatial indexes
+24.03.2020 00:11:07	Gathering XML indexes
+24.03.2020 00:11:07	Gathering Selective XML indexes
+24.03.2020 00:11:07	Gathering encrypted triggers
+24.03.2020 00:11:07	Gathering triggers
+24.03.2020 00:11:07	Gathering encrypted and clr ddl triggers
+24.03.2020 00:11:07	Gathering ddl triggers
+24.03.2020 00:11:07	Gathering synonyms
+24.03.2020 00:11:07	Gathering defaults
+24.03.2020 00:11:07	Gathering data constraint uddt bindings
+24.03.2020 00:11:07	Gathering rules
+24.03.2020 00:11:07	Gathering data constraint uddt bindings
+24.03.2020 00:11:07	Gathering message types
+24.03.2020 00:11:07	Gathering queues
+24.03.2020 00:11:07	Gathering contracts
+24.03.2020 00:11:07	Gathering services
+24.03.2020 00:11:07	Gathering event notifications
+24.03.2020 00:11:07	Gathering remote service bindings
+24.03.2020 00:11:07	Gathering broker priorities
+24.03.2020 00:11:07	Gathering signatures
+24.03.2020 00:11:07	Gathering data compression options
+24.03.2020 00:11:07	Gathering sequence types
+24.03.2020 00:11:07	Gathering security policies
+24.03.2020 00:11:07	Gather column encryption keys
+24.03.2020 00:11:07	Gathering column master keys
+24.03.2020 00:11:07	Gathering external data sources
+24.03.2020 00:11:07	Gathering external file formats
+24.03.2020 00:11:07	Gathering external tables
+24.03.2020 00:11:07	Gathering extended properties
+24.03.2020 00:11:07	Gathering credentials
+24.03.2020 00:11:07	Gathering logins
+24.03.2020 00:11:07	Gathering server audits
+24.03.2020 00:11:08	Scanning project for duplicate elements
+24.03.2020 00:11:08	Finished duplicate element processing
+24.03.2020 00:11:08	Finished importing database.
+24.03.2020 00:11:08	A summary of the import was saved to the following location: C:\Users\m_e_r\OneDrive\Masaüstü\StudyB.API\StudyB.Database\Import Schema Logs\StudyB.Database_20200323091102.log
+24.03.2020 00:11:08	Click Finish to continue...

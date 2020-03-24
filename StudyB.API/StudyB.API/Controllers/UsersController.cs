@@ -30,6 +30,7 @@ namespace StudyB.API.Controllers
         {
             var usersFromRepo = this.studyRepository.GetUsers();
             return Ok(this.mapper.Map<IEnumerable<UserDto>>(usersFromRepo));
+            
         }
 
         [HttpGet("{userId}", Name = "GetAuthor")]

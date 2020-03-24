@@ -40,3 +40,8 @@ C:\Users\m_e_r\OneDrive\Masaüstü\StudyB.API\StudyB.API\bin\Debug\netcoreapp3.0
 C:\Users\m_e_r\OneDrive\Masaüstü\StudyB.API\StudyB.API\bin\Debug\netcoreapp3.0\EntityFrameworkCore.Diagrams.dll
 C:\Users\m_e_r\OneDrive\Masaüstü\StudyB.API\StudyB.API\bin\Debug\netcoreapp3.0\Newtonsoft.Json.dll
 C:\Users\m_e_r\OneDrive\Masaüstü\StudyB.API\StudyB.API\obj\Debug\netcoreapp3.0\StudyB.API.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\m_e_r\OneDrive\Masaüstü\StudyB.API\StudyB.API\bin\Debug\netcoreapp3.0\libman.json
+C:\Users\m_e_r\OneDrive\Masaüstü\StudyB.API\StudyB.API\obj\Debug\netcoreapp3.0\StudyB.API.csproj.CoreCompileInputs.cache
+C:\Users\m_e_r\OneDrive\Masaüstü\StudyB.API\StudyB.API\obj\Debug\netcoreapp3.0\StudyB.API.genruntimeconfig.cache
+C:\Users\m_e_r\OneDrive\Masaüstü\StudyB.API\StudyB.API\obj\Debug\netcoreapp3.0\StudyB.API.Properties.Resources.resources
+C:\Users\m_e_r\OneDrive\Masaüstü\StudyB.API\StudyB.API\obj\Debug\netcoreapp3.0\StudyB.API.csproj.GenerateResource.cache

@@ -38,7 +38,7 @@ namespace StudyB.API
             services.AddDbContext<BuddyLibraryContext>(options =>
             {
                 options.UseSqlServer(
-                    @"Server=(localdb)\mssqllocaldb;Database=BuddyLibraryDB;Trusted_Connection=True;");
+                    @"Data Source=tcp:studyb.database.windows.net,1433;Initial Catalog=studyB-Database;User ID=mert12098;Password=42864789Mert");
             });
         }
 

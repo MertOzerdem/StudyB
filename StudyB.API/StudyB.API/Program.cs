@@ -26,9 +26,8 @@ namespace StudyB.API
                     var context = scope.ServiceProvider.GetService<BuddyLibraryContext>();
                     // for demo purposes, delete the database & migrate on startup so 
                     // we can start with a clean slate
-                    //context.Database.EnsureDeleted();
+                    // context.Database.EnsureDeleted();
                     //context.Database.Migrate();
-                    //context.Database.EnsureCreated();
                     context.Database.EnsureCreated();
                 }
                 catch (Exception ex)
