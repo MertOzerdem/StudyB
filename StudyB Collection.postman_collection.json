@@ -31,7 +31,7 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:5000/api/users/da2fd609-d754-4feb-8acd-c4f9ff13ba96",
+					"raw": "http://localhost:5000/api/users/8ded4df7-4355-41b0-9b44-a9de574bcc48",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -40,7 +40,7 @@
 					"path": [
 						"api",
 						"users",
-						"da2fd609-d754-4feb-8acd-c4f9ff13ba96"
+						"8ded4df7-4355-41b0-9b44-a9de574bcc48"
 					]
 				}
 			},
@@ -189,7 +189,10 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"userName\": \"yeni\",\r\n    \"firstName\": \"user\",\r\n    \"lastName\": \"friendly\",\r\n    \"password\": \"(889) 504-2690\"\r\n\t\r\n}"
+					"raw": "{\r\n    \"userName\": \"yeni\",\r\n    \"firstName\": \"user\",\r\n    \"lastName\": \"friendly\",\r\n    \"password\": \"(889) 504-2690\"\r\n}",
+					"options": {
+						"raw": {}
+					}
 				},
 				"url": {
 					"raw": "http://localhost:5000/api/users",
@@ -246,39 +249,6 @@
 			"response": []
 		},
 		{
-			"name": "Enroll to a chatroom",
-			"request": {
-				"method": "POST",
-				"header": [
-					{
-						"key": "Content-Type",
-						"value": "application/json",
-						"type": "text"
-					}
-				],
-				"body": {
-					"mode": "raw",
-					"raw": ""
-				},
-				"url": {
-					"raw": "http://localhost:5000/api/enroll/1acf8e02-9be4-428a-bd6b-8dce083bfac3/enrollChatroom/d28888e9-2ba9-473a-a40f-e38cb54f9b35",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "5000",
-					"path": [
-						"api",
-						"enroll",
-						"1acf8e02-9be4-428a-bd6b-8dce083bfac3",
-						"enrollChatroom",
-						"d28888e9-2ba9-473a-a40f-e38cb54f9b35"
-					]
-				}
-			},
-			"response": []
-		},
-		{
 			"name": "Create a chatroom",
 			"request": {
 				"method": "POST",
@@ -305,6 +275,116 @@
 						"localhost"
 					],
 					"port": "5000",
+					"path": [
+						"api",
+						"chatrooms"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Enroll to a chatroom",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5000/api/enroll/57e4e130-ce89-4688-b4b3-d60ee334540c/enrollChatroom/8ded4df7-4355-41b0-9b44-a9de574bcc48",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"enroll",
+						"57e4e130-ce89-4688-b4b3-d60ee334540c",
+						"enrollChatroom",
+						"8ded4df7-4355-41b0-9b44-a9de574bcc48"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "online user",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://studyb.azurewebsites.net/api/users",
+					"protocol": "https",
+					"host": [
+						"studyb",
+						"azurewebsites",
+						"net"
+					],
+					"path": [
+						"api",
+						"users"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Messages online",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://studyb.azurewebsites.net/api/messages",
+					"protocol": "https",
+					"host": [
+						"studyb",
+						"azurewebsites",
+						"net"
+					],
+					"path": [
+						"api",
+						"messages"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get chatrooms",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://studyb.azurewebsites.net/api/chatrooms",
+					"protocol": "https",
+					"host": [
+						"studyb",
+						"azurewebsites",
+						"net"
+					],
 					"path": [
 						"api",
 						"chatrooms"
