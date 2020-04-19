@@ -1,6 +1,6 @@
 {
 	"info": {
-		"_postman_id": "ecfdc59c-a659-47dd-89d3-14645b6e1f83",
+		"_postman_id": "fa4d069c-1818-4459-86c5-3663d938ef17",
 		"name": "StudyB Collection",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
@@ -41,6 +41,69 @@
 						"api",
 						"users",
 						"8ded4df7-4355-41b0-9b44-a9de574bcc48"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get user with rewards",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5000/api/users/d28888e9-2ba9-473a-a40f-e38cb54f9b35/rewards",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"users",
+						"d28888e9-2ba9-473a-a40f-e38cb54f9b35",
+						"rewards"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get all rewards",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5000/api/rewards",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"rewards"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get a single reward",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5000/api/rewards/118fc971-0831-4207-9b1d-7237bc4271b2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"rewards",
+						"118fc971-0831-4207-9b1d-7237bc4271b2"
 					]
 				}
 			},
@@ -189,7 +252,7 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"userName\": \"yeni\",\r\n    \"firstName\": \"user\",\r\n    \"lastName\": \"friendly\",\r\n    \"password\": \"(889) 504-2690\"\r\n}",
+					"raw": "[\r\n    \"userName\": \"mahmuasdast111\",\r\n    \"firstName\": \"mahmut\",\r\n    \"lastName\": \"can\",\r\n    \"password\": \"5042690\",\r\n    \"email\": \"mahmasdasdut.can@ug.bilkent.edu.tr\"\r\n",
 					"options": {
 						"raw": {}
 					}
@@ -227,7 +290,10 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"text\": \"bunlar nasıl sorular? ben sana soruyomuyum ...\",\r\n    \"fileAddress\": null\r\n}"
+					"raw": "{\r\n    \"text\": \"bunlar nasıl sorular? ben sana soruyomuyum ...\",\r\n    \"fileAddress\": null\r\n}",
+					"options": {
+						"raw": {}
+					}
 				},
 				"url": {
 					"raw": "http://localhost:5000/api/messages/ce446daa-5e35-4f2a-ab83-cf75cac4837e/users/8ded4df7-4355-41b0-9b44-a9de574bcc48/messages",
@@ -266,7 +332,10 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n\t\"chatroomName\": \"New chatroom\"\n}"
+					"raw": "{\n\t\"chatroomName\": \"New chatroom\"\n}",
+					"options": {
+						"raw": {}
+					}
 				},
 				"url": {
 					"raw": "http://localhost:5000/api/chatrooms",
@@ -302,7 +371,7 @@
 					}
 				},
 				"url": {
-					"raw": "http://localhost:5000/api/enroll/57e4e130-ce89-4688-b4b3-d60ee334540c/enrollChatroom/8ded4df7-4355-41b0-9b44-a9de574bcc48",
+					"raw": "http://localhost:5000/api/enroll/c25ed015-3e14-440d-a7c0-7eeedc0cf32b/enrollChatroom/8ded4df7-4355-41b0-9b44-a9de574bcc48",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -311,7 +380,7 @@
 					"path": [
 						"api",
 						"enroll",
-						"57e4e130-ce89-4688-b4b3-d60ee334540c",
+						"c25ed015-3e14-440d-a7c0-7eeedc0cf32b",
 						"enrollChatroom",
 						"8ded4df7-4355-41b0-9b44-a9de574bcc48"
 					]
