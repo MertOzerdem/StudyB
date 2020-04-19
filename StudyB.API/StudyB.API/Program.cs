@@ -28,7 +28,7 @@ namespace StudyB.API
                     // we can start with a clean slate
                     // context.Database.EnsureDeleted();
                     //context.Database.Migrate();
-                    context.Database.EnsureCreated();
+                    //context.Database.EnsureCreated();
                 }
                 catch (Exception ex)
                 {

@@ -11,6 +11,8 @@ namespace StudyB.API.Entities
     {
         [Key]
         public Guid Id { get; set; }
+        [Required]
+        [MaxLength(1500)]
         public string Text { get; set; }
         public string FileAddress { get; set; }
         public DateTimeOffset DateOfPost { get; set; }

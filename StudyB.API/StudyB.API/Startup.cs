@@ -35,10 +35,16 @@ namespace StudyB.API
             services.AddScoped<IStudyRepository, StudyRepository>();
 
 
+            //services.AddDbContext<BuddyLibraryContext>(options =>
+            //{
+            //    options.UseSqlServer(
+            //        @"Data Source=tcp:studyb.database.windows.net,1433;Initial Catalog=studyB-Database;User ID=mert12098;Password=42864789Mert");
+            //});
+
             services.AddDbContext<BuddyLibraryContext>(options =>
             {
                 options.UseSqlServer(
-                    @"Data Source=tcp:studyb.database.windows.net,1433;Initial Catalog=studyB-Database;User ID=mert12098;Password=42864789Mert");
+                    @"Server=(localdb)\mssqllocaldb;Database=BuddyLibraryDB;Trusted_Connection=True;");
             });
         }
 

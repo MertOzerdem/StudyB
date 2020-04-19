@@ -10,11 +10,13 @@ namespace StudyB.API.Entities
     public class Reward
     {
         [Key]
-        public int Id { get; set; }
+        public Guid Id { get; set; }
+        [MaxLength(40)]
+        public string RewardName { get; set; }
 
-        // Change later do not seem like a fit here rewards should not keep users that have them
-        [ForeignKey("UserId")]
-        public User User { get; set; }
-        public Guid UserId { get; set; }
+        //// Change later do not seem like a fit here rewards should not keep users that have them
+        //[ForeignKey("UserId")]
+        //public User User { get; set; }
+        //public Guid UserId { get; set; }
     }
 }

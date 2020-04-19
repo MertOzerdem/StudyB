@@ -19,36 +19,44 @@ namespace StudyB.API.DbContexts
         public DbSet<Chatroom> Chatrooms { get; set; }
         public DbSet<Reward> Rewards  { get; set; }
         public DbSet<UserChatroom> UserChatrooms  { get; set; }
-        
+        public DbSet<UserReward> UserRewards { get; set; }
+
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.Entity<UserChatroom>().HasKey(u => new { u.ChatroomId, u.UserId });
+            modelBuilder.Entity<UserReward>().HasKey(u => new { u.RewardId, u.UserId });
 
             var User = new[]
             {
                 new User
                 {
                     Id = Guid.Parse("d28888e9-2ba9-473a-a40f-e38cb54f9b35"),
+                    Admin = false,
                     FirstName = "Pasta",
                     LastName = "Sempa",
                     UserName = "Pasta",
-                    Password = "123"
+                    Password = "123",
+                    Email = "pasta@ug.bilkent.edu.tr"
                 },
                 new User
                 {
                     Id = Guid.Parse("da2fd609-d754-4feb-8acd-c4f9ff13ba96"),
+                    Admin = false,
                     FirstName = "Pepe",
                     LastName = "Julian Onziema",
                     UserName = "LGBT Right Activist",
-                    Password = "159"
+                    Password = "159",
+                    Email = "Pepe@ug.bilkent.edu.tr"
                 },
                 new User
                 {
                     Id = Guid.Parse("8ded4df7-4355-41b0-9b44-a9de574bcc48"),
+                    Admin = true,
                     FirstName = "Ismini",
                     LastName = "bulamadım",
                     UserName = "The Host",
-                    Password = "159"
+                    Password = "159",
+                    Email = "Ismini@ug.bilkent.edu.tr"
                 }
             };
 
@@ -167,6 +175,25 @@ namespace StudyB.API.DbContexts
 
             };
 
+            var Reward = new[]
+            {
+                new Reward
+                {
+                    Id = Guid.Parse("02b9e886-0291-45d9-8d97-6adc7e63babf"),
+                    RewardName = "Best Admin Ever"
+                },
+                new Reward
+                {
+                    Id = Guid.Parse("e5d9f399-be62-4283-b7c6-81177f71a402"),
+                    RewardName = "Worst Admin Ever"
+                },
+                new Reward
+                {
+                    Id = Guid.Parse("118fc971-0831-4207-9b1d-7237bc4271b2"),
+                    RewardName = "Average User" 
+                }
+            };
+
             var UserChatroom = new[]
             {
                 new UserChatroom
@@ -181,11 +208,27 @@ namespace StudyB.API.DbContexts
                 }
             };
 
+            var UserReward = new[]
+            {
+                new UserReward
+                {
+                    UserId = Guid.Parse("d28888e9-2ba9-473a-a40f-e38cb54f9b35"),
+                    RewardId = Guid.Parse("118fc971-0831-4207-9b1d-7237bc4271b2")
+                },
+                new UserReward
+                {
+                    UserId = Guid.Parse("da2fd609-d754-4feb-8acd-c4f9ff13ba96"),
+                    RewardId = Guid.Parse("02b9e886-0291-45d9-8d97-6adc7e63babf")
+                }
+            };
+
             modelBuilder.Entity<User>().HasData(User[0], User[1], User[2]);
             modelBuilder.Entity<Chatroom>().HasData(Chatroom[0], Chatroom[1], Chatroom[2]);
             modelBuilder.Entity<Message>().HasData(Message[0], Message[1], Message[2], Message[3], Message[4],
                                                    Message[5], Message[6], Message[7], Message[8]);
+            modelBuilder.Entity<Reward>().HasData(Reward[0], Reward[1], Reward[2]);
             modelBuilder.Entity<UserChatroom>().HasData(UserChatroom[0], UserChatroom[1]);
+            modelBuilder.Entity<UserReward>().HasData(UserReward[0], UserReward[1]);
 
             base.OnModelCreating(modelBuilder);
 

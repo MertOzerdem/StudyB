@@ -70,6 +70,12 @@ namespace StudyB.API.Controllers
         {
             var chatroomEntity = this.mapper.Map<Chatroom>(chatroom);
 
+            // Check if chatroom name exist
+            if (!this.studyRepository.IsChatroomNameValid(chatroomEntity))
+            {
+                return BadRequest(); // EDIT TO RETURN CAUSE OF ERROR
+            }
+
             this.studyRepository.AddChatroom(chatroomEntity);
             this.studyRepository.Save();
 

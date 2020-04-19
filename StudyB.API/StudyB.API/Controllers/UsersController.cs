@@ -40,10 +40,44 @@ namespace StudyB.API.Controllers
             return Ok(this.mapper.Map<UserDto>(userFromRepo));
         }
 
+        [HttpGet("{userId}/rewards")]
+        public ActionResult GetUserWithRewards(Guid userId)
+        {
+            var rewarsFromRepo = this.studyRepository.GetUsersWithRewards(userId);
+
+            var rewards = new List<RewardDto>();
+            foreach (var reward in rewarsFromRepo.UserRewards)
+            {
+                rewards.Add(new RewardDto
+                {
+                    Id = reward.Reward.Id,
+                    RewardName = reward.Reward.RewardName
+                });
+            }
+
+            var userWithRewards = this.mapper.Map<UserWithRewardDto>(rewarsFromRepo);
+            userWithRewards.Rewards = rewards;
+
+            return Ok(userWithRewards);
+        }
+
         [HttpPost]
         public ActionResult<UserDto> CreateUser(UserForCreationDto user)
         {
             var userEntity = this.mapper.Map<User>(user);
+
+            // Check if user name exist
+            if (!this.studyRepository.IsUserValid(userEntity))
+            {
+                return BadRequest(); // EDIT TO RETURN CAUSE OF ERROR
+            }
+
+            // Check If email exist
+            if (!this.studyRepository.IsEmailValid(userEntity))
+            {
+                return BadRequest();
+            }
+
             this.studyRepository.AddUser(userEntity);
             this.studyRepository.Save();
 
@@ -53,8 +87,5 @@ namespace StudyB.API.Controllers
                 new { userId = userToReturn.Id }, 
                 userToReturn);
         }
-
-        
-
     }
 }

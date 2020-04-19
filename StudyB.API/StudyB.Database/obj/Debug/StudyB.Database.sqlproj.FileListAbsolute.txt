@@ -1,0 +1,6 @@
+C:\Users\m_e_r\OneDrive\Masaüstü\StudyB.API\StudyB.Database\bin\Debug\StudyB.Database.dacpac
+C:\Users\m_e_r\OneDrive\Masaüstü\StudyB.API\StudyB.Database\bin\Debug\StudyB.Database.dll
+C:\Users\m_e_r\OneDrive\Masaüstü\StudyB.API\StudyB.Database\bin\Debug\StudyB.Database.pdb
+C:\Users\m_e_r\OneDrive\Masaüstü\StudyB.API\StudyB.Database\obj\Debug\StudyB.Database.sqlprojAssemblyReference.cache
+C:\Users\m_e_r\OneDrive\Masaüstü\StudyB.API\StudyB.Database\obj\Debug\StudyB.Database.dll
+C:\Users\m_e_r\OneDrive\Masaüstü\StudyB.API\StudyB.Database\obj\Debug\StudyB.Database.pdb

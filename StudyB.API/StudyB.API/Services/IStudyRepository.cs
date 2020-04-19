@@ -16,6 +16,8 @@ namespace StudyB.API.Services
         Chatroom GetChatroom(Guid Id);
         void AddUser(User user);
         bool UserExist(Guid userId);
+        bool IsUserValid(User user);
+        bool IsEmailValid(User user);
 
         // CHATROOM RELATED FUNC
         IEnumerable<Chatroom> GetChatrooms();
@@ -25,6 +27,7 @@ namespace StudyB.API.Services
         bool ChatroomExist(Guid chatroomId);
         void AddMessage(Guid chatroomId, Guid userId, Message message);
         Chatroom AddChatroom(Chatroom chatroom);
+        bool IsChatroomNameValid(Chatroom chatroom);
 
         // MESSAGES RELATED FUNC
         List<Message> GetMessages();
@@ -33,5 +36,10 @@ namespace StudyB.API.Services
 
         // USERCHATROOM RELATED FUNC
         bool AddUserChatroom(Guid chatroomId, Guid userId);
+
+        // REWARD RELATED FUNC
+        User GetUsersWithRewards(Guid userId);
+        List<Reward> GetRewards();
+        Reward GetReward(Guid rewardId);
     }
 }

@@ -44,8 +44,29 @@ namespace StudyB.API.Services
             }
 
             user.Id = Guid.NewGuid();
+            user.Admin = false;
 
             this.context.Users.Add(user);
+        }
+        public bool IsUserValid(User user)
+        {
+            bool userVal = this.context.Users.Any(u => u.UserName == user.UserName);
+
+            return !userVal;
+        }
+
+        public bool IsEmailValid(User user)
+        {
+            bool isBilkentMail = user.Email.Contains("@ug.bilkent.edu.tr");
+
+            if (!isBilkentMail)
+            {
+                return false;
+            }
+
+            bool emailVal = this.context.Users.Any(e => e.Email == user.Email);
+
+            return !emailVal;
         }
 
         public bool UserExist(Guid userId)
@@ -139,9 +160,17 @@ namespace StudyB.API.Services
             return chatroom;
         }
 
+        public bool IsChatroomNameValid(Chatroom chatroom)
+        {
+            bool chatroomVal = this.context.Chatrooms.Any(u => u.ChatroomName == chatroom.ChatroomName);
+
+            return !chatroomVal;
+        }
+
         //
         // MESSAGES RELATED FUNC
         //
+
         public void AddMessage(Guid chatroomId, Guid userId, Message message)
         {
             if (userId == Guid.Empty)
@@ -222,6 +251,55 @@ namespace StudyB.API.Services
 
             
         }
+
+        // REWARD RELATED FUNCTİONS
+
+        public User GetUsersWithRewards(Guid userId)
+        {
+            var userRewards = this.context.Users.Where(u => u.Id == userId)
+                .Include(ur=> ur.UserRewards)
+                .ThenInclude(r => r.Reward)
+                .FirstOrDefault();
+            //var userRewards = this.context.Users.where(i => i.userId == userId).Include(u => u.UserRewards).ThenInclude(r => r.Reward);
+
+            //return dataContext.Orders
+            //          .Include(order => order.OrderProducts)
+            //          .ThenInclude(orderProducts => orderProducts.Product);
+            //var rewards = this.context.UserRewards.Select(r => r.UserId == userId).ToList();
+
+            //var rewards = this.context.UserRewards.Where(r => r.Id == Id).FirstOrDefault()
+
+            //var rewards = this.context.Rewards.Select(u => new User
+            //{
+
+            //}).ToList();
+
+            //var chatroomsWithContent = this.context.Chatrooms.Select(c => new Chatroom
+            //{
+            //    ChatroomName = c.ChatroomName,
+            //    Id = c.Id,
+            //    Messages = c.Messages.OrderBy(s => s.DateOfPost).ToList()
+            //}).ToList();
+
+            return userRewards;
+        }
+
+        public List<Reward> GetRewards()
+        {
+            
+            return this.context.Rewards.ToList<Reward>();
+        }
+
+        public Reward GetReward(Guid rewardId)
+        {
+            if (rewardId == Guid.Empty)
+            {
+                throw new ArgumentNullException(nameof(rewardId));
+            }
+
+            return this.context.Rewards.Where(r => r.Id == rewardId).FirstOrDefault();
+        }
+
 
         public bool Save()
         {

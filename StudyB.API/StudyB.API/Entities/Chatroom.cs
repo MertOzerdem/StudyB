@@ -10,6 +10,8 @@ namespace StudyB.API.Entities
     {
         [Key]
         public Guid Id { get; set; }
+        [Required]
+        [MaxLength(100)]
         public String ChatroomName { get; set; }
         public ICollection<Message> Messages { get; set; }
             = new List<Message>();
