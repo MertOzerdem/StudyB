@@ -23,7 +23,7 @@ namespace StudyB.API.Controllers
         }
 
         [HttpPost("{chatroomId}/enrollChatroom/{userId}")]
-        public ActionResult<ChatroomDto> EnrollChatroom(Guid chatroomId, Guid userId)
+        public ActionResult<ChatroomDto> EnrollChatroom(Guid chatroomId, Guid userId, MessageForCreationDto message)
         {
 
             if (!this.studyRepository.UserExist(userId))

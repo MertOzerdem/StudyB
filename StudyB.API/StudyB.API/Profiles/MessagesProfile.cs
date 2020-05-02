@@ -12,6 +12,7 @@ namespace StudyB.API.Profiles
         {
             CreateMap<Entities.Message, Models.MessageDto>();
             CreateMap<Models.MessageForCreationDto, Entities.Message>();
+            CreateMap<Entities.Message, Models.MessageWithUserDto>();
         }
     }
 }

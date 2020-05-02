@@ -205,7 +205,7 @@ namespace StudyB.API.Services
 
         public List<Message> GetChatroomMessages(Guid ChatroomId)
         {
-            var messages = this.context.Messages.Where(m => m.ChatroomId == ChatroomId).OrderBy(o => o.DateOfPost).ToList();
+            var messages = this.context.Messages.Where(m => m.ChatroomId == ChatroomId).OrderBy(o => o.DateOfPost).Include(u => u.User).ToList();
 
             return messages;
         }
@@ -233,20 +233,36 @@ namespace StudyB.API.Services
                 throw new ArgumentNullException(nameof(userId));
             }
 
+
+            var listofAll = this.context.UserChatrooms.ToList();
+
+            foreach(var item in listofAll)
+            {
+                if(item.ChatroomId == chatroomId && item.UserId == userId)
+                {
+                    return false;
+                }
+            }
+
             var userChatroom = new UserChatroom
             {
                 ChatroomId = chatroomId,
                 UserId = userId
             };
+            this.context.UserChatrooms.Add(userChatroom);
 
-            if (!this.context.UserChatrooms.Any(u => u.UserId == userChatroom.UserId)
-                && !this.context.UserChatrooms.Any(u => u.ChatroomId == userChatroom.ChatroomId))
-            {
-                this.context.UserChatrooms.Add(userChatroom);
-                return true;
-            }
+            return true;
 
-            return false;
+            //var abc = this.context.UserChatrooms.Any(u => u.UserId == userChatroom.UserId);
+            //var nz = this.context.UserChatrooms.Any(u => u.ChatroomId == userChatroom.ChatroomId);
+
+            //if (abc && nz)
+            //{
+            //    this.context.UserChatrooms.Add(userChatroom);
+            //    return true;
+            //}
+
+            //return false;
             // make query so that not any duplicate will be tried to saved
 
             

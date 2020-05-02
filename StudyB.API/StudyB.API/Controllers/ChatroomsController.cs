@@ -41,9 +41,25 @@ namespace StudyB.API.Controllers
         [HttpGet("{chatroomId}/messages")]
         public ActionResult GetChatroomMessages(Guid chatroomId)
         {
-            var messages = this.studyRepository.GetChatroomMessages(chatroomId);
+            var messagesFromRepo = this.studyRepository.GetChatroomMessages(chatroomId);
 
-            return Ok(this.mapper.Map<IEnumerable<MessageDto>>(messages));
+            //var messages = this.mapper.Map<IEnumerable<MessageWithUserDto>>(messagesFromRepo);
+
+            var messages = new List<MessageWithUserDto>();
+            foreach(var newmessage in messagesFromRepo)
+            {
+                messages.Add(new MessageWithUserDto
+                {
+                    Id = newmessage.Id,
+                    Text = newmessage.Text,
+                    FileAddress = newmessage.FileAddress,
+                    DateOfPost = newmessage.DateOfPost,
+                    UserId = newmessage.UserId,
+                    UserName = newmessage.User.UserName
+                });
+            }
+
+            return Ok(messages);
         }
 
         [HttpGet("content")]

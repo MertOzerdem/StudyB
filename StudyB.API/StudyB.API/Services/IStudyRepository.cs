@@ -22,7 +22,6 @@ namespace StudyB.API.Services
         // CHATROOM RELATED FUNC
         IEnumerable<Chatroom> GetChatrooms();
         Chatroom GetChatroomWithContent(Guid Id);
-        //List<ChatroomsWithContentDto> GetChatroomsWithContent();
         List<Chatroom> GetChatroomsWithContent();
         bool ChatroomExist(Guid chatroomId);
         void AddMessage(Guid chatroomId, Guid userId, Message message);

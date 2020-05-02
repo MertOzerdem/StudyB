@@ -7,7 +7,7 @@ namespace StudyB.API.Models
 {
     public class MessageWithUserDto
     {
-        public Guid MessageId { get; set; }
+        public Guid Id { get; set; }
         public string Text { get; set; }
         public string FileAddress { get; set; }
         public DateTimeOffset DateOfPost { get; set; }

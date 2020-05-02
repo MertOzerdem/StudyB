@@ -30,8 +30,6 @@ namespace StudyB.API.Entities
         public ICollection<UserChatroom> UserChatrooms { get; set; }
             = new List<UserChatroom>();
         public ICollection<UserReward> UserRewards { get; set; } 
-            = new List<UserReward>();
-
-        
+            = new List<UserReward>();  
     }
 }

@@ -22,5 +22,6 @@ namespace StudyB.API.Entities
         [ForeignKey("ChatroomId")]
         public Chatroom Chatroom { get; set; }
         public Guid ChatroomId { get; set; }
+        
     }
 }

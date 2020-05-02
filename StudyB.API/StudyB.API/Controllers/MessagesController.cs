@@ -54,11 +54,15 @@ namespace StudyB.API.Controllers
                 return NotFound();
             }
 
+            var user = this.studyRepository.GetUser(userId);
             var messageEntity = this.mapper.Map<Message>(message);
             this.studyRepository.AddMessage(chatroomId, userId, messageEntity);
             this.studyRepository.Save();
+            
+            var messageToReturn = this.mapper.Map<MessageWithUserDto>(messageEntity);
 
-            var messageToReturn = this.mapper.Map<MessageDto>(messageEntity);
+            messageToReturn.UserId = user.Id;
+            messageToReturn.UserName = user.UserName;
 
             //fix this problem
             //return CreatedAtAction("GetMessage", new { messageId = messageEntity.Id }
