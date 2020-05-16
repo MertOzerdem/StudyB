@@ -30,6 +30,13 @@ namespace StudyB.API.Controllers
             return Ok(this.mapper.Map<IEnumerable<ChatroomDto>>(chatroomsFromRepo));
         }
 
+        [HttpGet("{userId}/user")]
+        public ActionResult GetEnrolledChatrooms(Guid userId)
+        {
+            var chatroomFromRepo = this.studyRepository.GetChatromsWithUserId(userId);
+            return Ok(this.mapper.Map<IEnumerable<ChatroomDto>>(chatroomFromRepo));
+        }
+
         [HttpGet("{chatroomId}", Name ="GetChatroom")]
         public ActionResult GetChatroom(Guid chatroomId)
         {

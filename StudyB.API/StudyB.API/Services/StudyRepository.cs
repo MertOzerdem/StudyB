@@ -79,6 +79,7 @@ namespace StudyB.API.Services
             return this.context.Users.Any(u => u.Id == userId);
         }
 
+        ///
         /// <summary>
         /// CHATROOM RELATED FUNC
         /// </summary>
@@ -96,6 +97,22 @@ namespace StudyB.API.Services
             }
             return this.context.Chatrooms.Where(c => c.Id == Id).FirstOrDefault();
         }
+
+        public IEnumerable<Chatroom> GetChatromsWithUserId(Guid userId)
+        {
+            if (userId == Guid.Empty)
+            {
+                throw new ArgumentNullException(nameof(userId));
+            }
+
+            //var query = this.context.Users.Where(u => u.Id == userId).SelectMany(u => Chatroom);
+            var query = from chatroom in this.context.Chatrooms
+                        where chatroom.UserChatrooms.Any(c => c.UserId == userId)
+                        select chatroom;
+
+            return query.ToList();
+        }
+
 
         //public List<ChatroomsWithContentDto> GetChatroomsWithContent()
         //{

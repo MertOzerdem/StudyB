@@ -35,17 +35,17 @@ namespace StudyB.API
             services.AddScoped<IStudyRepository, StudyRepository>();
 
 
-            services.AddDbContext<BuddyLibraryContext>(options =>
-            {
-                options.UseSqlServer(
-                    @"Data Source=tcp:studyb.database.windows.net,1433;Initial Catalog=studyB-Database;User ID=mert12098;Password=42864789Mert");
-            });
-
             //services.AddDbContext<BuddyLibraryContext>(options =>
             //{
             //    options.UseSqlServer(
-            //        @"Server=(localdb)\mssqllocaldb;Database=BuddyLibraryDB;Trusted_Connection=True;");
+            //        @"Data Source=tcp:studyb.database.windows.net,1433;Initial Catalog=studyB-Database;User ID=mert12098;Password=42864789Mert");
             //});
+
+            services.AddDbContext<BuddyLibraryContext>(options =>
+            {
+                options.UseSqlServer(
+                    @"Server=(localdb)\mssqllocaldb;Database=BuddyLibraryDB;Trusted_Connection=True;");
+            });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

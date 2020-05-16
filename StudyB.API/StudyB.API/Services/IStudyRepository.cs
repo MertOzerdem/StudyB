@@ -27,6 +27,7 @@ namespace StudyB.API.Services
         void AddMessage(Guid chatroomId, Guid userId, Message message);
         Chatroom AddChatroom(Chatroom chatroom);
         bool IsChatroomNameValid(Chatroom chatroom);
+        IEnumerable<Chatroom> GetChatromsWithUserId(Guid userId);
 
         // MESSAGES RELATED FUNC
         List<Message> GetMessages();
