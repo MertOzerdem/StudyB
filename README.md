@@ -1,2 +1,3 @@
 # StudyB
-App code repository 
+Back-end Lead: Mert Özerdem
+Back-end Team: Mert Özerdem
