@@ -12,10 +12,10 @@
 ###### Program and Startup Packages: Mert Özerdem  
 ## Back-end MSSQL Database: Mert Özerdem
 ###### dbo Package: Mert Özerdem  
-## Back-end Automation and Testing
+## Back-end Automation and Testing: Mert Özerdem 
 ###### Postman test and automation scripts: Mert Özerdem  
-## Back-end Excel documentaion on how to use back-end
+## Back-end Excel documentaion on how to use back-end: Mert Özerdem 
 ###### Request Guide: Mert Özerdem 
-## Back-end Cloud integration : Mert Özerdem
+## Back-end Cloud integration: Mert Özerdem
 ###### https://studyb.azurewebsites.net/api/users (example request)
 ###### https://studyb.azurewebsites.net/api (root address)
