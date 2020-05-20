@@ -1,7 +1,7 @@
 # StudyB Back-end  
 ## Back-end Lead: Mert Özerdem  
 ## Back-end Team: Mert Özerdem  
-## Back-end all work load, code written: Mert Özerdem (All packages and responsible member listed below):
+## Back-end all workload, code written: Mert Özerdem (All packages and responsible member listed below):
 ###### Controller Package: Mert Özerdem  
 ###### DbContexts Package: Mert Özerdem  
 ###### Entities Package: Mert Özerdem  
