@@ -172,6 +172,28 @@
 			"response": []
 		},
 		{
+			"name": "Chatroom with userId",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5000/api/chatrooms/77de1f3e-1862-4924-99e2-7a4e52778f80/user",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"chatrooms",
+						"77de1f3e-1862-4924-99e2-7a4e52778f80",
+						"user"
+					]
+				}
+			},
+			"response": []
+		},
+		{
 			"name": "Get all messages",
 			"request": {
 				"method": "GET",
@@ -241,18 +263,18 @@
 				"header": [
 					{
 						"key": "Content-Type",
-						"value": "application/json",
-						"type": "text"
+						"type": "text",
+						"value": "application/json"
 					},
 					{
 						"key": "Accept",
-						"value": "application/json",
-						"type": "text"
+						"type": "text",
+						"value": "application/json"
 					}
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "[\r\n    \"userName\": \"mahmuasdast111\",\r\n    \"firstName\": \"mahmut\",\r\n    \"lastName\": \"can\",\r\n    \"password\": \"5042690\",\r\n    \"email\": \"mahmasdasdut.can@ug.bilkent.edu.tr\"\r\n",
+					"raw": "{\r\n    \"userName\": \"a\",\r\n    \"firstName\": \"mahmut\",\r\n    \"lastName\": \"can\",\r\n    \"password\": \"ab\",\r\n    \"email\": \"mahmddasdasdut.can@ug.bilkent.edu.tr\"\r\n}",
 					"options": {
 						"raw": {}
 					}
@@ -365,13 +387,13 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "",
+					"raw": "{\r\n    \"text\": \"deneme...\",\r\n    \"fileAddress\": null\r\n}",
 					"options": {
 						"raw": {}
 					}
 				},
 				"url": {
-					"raw": "http://localhost:5000/api/enroll/c25ed015-3e14-440d-a7c0-7eeedc0cf32b/enrollChatroom/8ded4df7-4355-41b0-9b44-a9de574bcc48",
+					"raw": "http://localhost:5000/api/enroll/c25ed015-3e14-440d-a7c0-7eeedc0cf32b/enrollChatroom/77de1f3e-1862-4924-99e2-7a4e52778f80",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -382,7 +404,7 @@
 						"enroll",
 						"c25ed015-3e14-440d-a7c0-7eeedc0cf32b",
 						"enrollChatroom",
-						"8ded4df7-4355-41b0-9b44-a9de574bcc48"
+						"77de1f3e-1862-4924-99e2-7a4e52778f80"
 					]
 				}
 			},
@@ -442,6 +464,29 @@
 			"response": []
 		},
 		{
+			"name": "Get chatroom's messages",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://studyb.azurewebsites.net/api/chatrooms/ce446daa-5e35-4f2a-ab83-cf75cac4837e/messages",
+					"protocol": "https",
+					"host": [
+						"studyb",
+						"azurewebsites",
+						"net"
+					],
+					"path": [
+						"api",
+						"chatrooms",
+						"ce446daa-5e35-4f2a-ab83-cf75cac4837e",
+						"messages"
+					]
+				}
+			},
+			"response": []
+		},
+		{
 			"name": "Get chatrooms",
 			"request": {
 				"method": "GET",
@@ -457,6 +502,148 @@
 					"path": [
 						"api",
 						"chatrooms"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Chatroom with userId (online)",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://studyb.azurewebsites.net/api/chatrooms/77de1f3e-1862-4924-99e2-7a4e52778f80/user",
+					"protocol": "https",
+					"host": [
+						"studyb",
+						"azurewebsites",
+						"net"
+					],
+					"path": [
+						"api",
+						"chatrooms",
+						"77de1f3e-1862-4924-99e2-7a4e52778f80",
+						"user"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Enroll to a chatroom (online)",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"text\": \"deneme...\",\r\n    \"fileAddress\": null\r\n}",
+					"options": {
+						"raw": {}
+					}
+				},
+				"url": {
+					"raw": "https://studyb.azurewebsites.net/api/enroll/c25ed015-3e14-440d-a7c0-7eeedc0cf32b/enrollChatroom/1acf8e02-9be4-428a-bd6b-8dce083bfac3",
+					"protocol": "https",
+					"host": [
+						"studyb",
+						"azurewebsites",
+						"net"
+					],
+					"path": [
+						"api",
+						"enroll",
+						"c25ed015-3e14-440d-a7c0-7eeedc0cf32b",
+						"enrollChatroom",
+						"1acf8e02-9be4-428a-bd6b-8dce083bfac3"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create a user online",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"userName\": \"Ad\",\r\n    \"firstName\": \"mahmsut\",\r\n    \"lastName\": \"cassn\",\r\n    \"password\": \"Ad\",\r\n    \"email\": \"Ad@ug.bilkent.edu.tr\"\r\n}",
+					"options": {
+						"raw": {}
+					}
+				},
+				"url": {
+					"raw": "https://studyb.azurewebsites.net/api/users",
+					"protocol": "https",
+					"host": [
+						"studyb",
+						"azurewebsites",
+						"net"
+					],
+					"path": [
+						"api",
+						"users"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create a message (online)",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					},
+					{
+						"key": "Accept",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"text\": \"bunlar nasıl sorular? ben sana soruyo muyum? ...\",\r\n    \"fileAddress\": null\r\n}",
+					"options": {
+						"raw": {}
+					}
+				},
+				"url": {
+					"raw": "https://studyb.azurewebsites.net/api/messages/c25ed015-3e14-440d-a7c0-7eeedc0cf32b/users/0223c785-650f-41ce-9b4f-16b4f8d81ba6/messages\n",
+					"protocol": "https",
+					"host": [
+						"studyb",
+						"azurewebsites",
+						"net"
+					],
+					"path": [
+						"api",
+						"messages",
+						"c25ed015-3e14-440d-a7c0-7eeedc0cf32b",
+						"users",
+						"0223c785-650f-41ce-9b4f-16b4f8d81ba6",
+						"messages\n"
 					]
 				}
 			},
