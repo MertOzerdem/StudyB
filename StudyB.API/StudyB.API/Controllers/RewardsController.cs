@@ -24,14 +24,14 @@ namespace StudyB.API.Controllers
         }
 
         [HttpGet]
-        public ActionResult<IEnumerable<RewardDto>> GetChatrooms()
+        public ActionResult<IEnumerable<RewardDto>> GetRewards()
         {
             var rewardsFromRepo = this.studyRepository.GetRewards();
             return Ok(this.mapper.Map<IEnumerable<RewardDto>>(rewardsFromRepo));
         }
 
         [HttpGet("{rewardId}", Name = "GetReward")]
-        public ActionResult GetChatroom(Guid rewardId)
+        public ActionResult GetReward(Guid rewardId)
         {
             var rewardFromRepo = this.studyRepository.GetReward(rewardId);
             return Ok(this.mapper.Map<RewardDto>(rewardFromRepo));

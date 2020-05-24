@@ -45,6 +45,8 @@ namespace StudyB.API.Services
 
             user.Id = Guid.NewGuid();
             user.Admin = false;
+            user.MessageCount = 0;
+            user.UpvoteCount = 0;
 
             this.context.Users.Add(user);
         }
@@ -204,6 +206,9 @@ namespace StudyB.API.Services
             {
                 throw new ArgumentNullException(nameof(message));
             }
+
+            User user = this.context.Users.Where(u => u.Id == userId).FirstOrDefault();
+            user.MessageCount = user.MessageCount + 1;
 
             message.ChatroomId = chatroomId;
             message.UserId = userId;

@@ -25,6 +25,8 @@ namespace StudyB.API.Entities
         [Required]
         [MaxLength(200)]
         public string Email { get; set; }
+        public int UpvoteCount { get; set; }
+        public int MessageCount { get; set; }
         public ICollection<Message> Messages { get; set; }
             = new List<Message>();
         public ICollection<UserChatroom> UserChatrooms { get; set; }
