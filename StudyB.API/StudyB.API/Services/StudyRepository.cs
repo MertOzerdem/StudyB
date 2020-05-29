@@ -273,21 +273,7 @@ namespace StudyB.API.Services
             };
             this.context.UserChatrooms.Add(userChatroom);
 
-            return true;
-
-            //var abc = this.context.UserChatrooms.Any(u => u.UserId == userChatroom.UserId);
-            //var nz = this.context.UserChatrooms.Any(u => u.ChatroomId == userChatroom.ChatroomId);
-
-            //if (abc && nz)
-            //{
-            //    this.context.UserChatrooms.Add(userChatroom);
-            //    return true;
-            //}
-
-            //return false;
-            // make query so that not any duplicate will be tried to saved
-
-            
+            return true; 
         }
 
         // REWARD RELATED FUNCTİONS
@@ -298,27 +284,6 @@ namespace StudyB.API.Services
                 .Include(ur=> ur.UserRewards)
                 .ThenInclude(r => r.Reward)
                 .FirstOrDefault();
-            //var userRewards = this.context.Users.where(i => i.userId == userId).Include(u => u.UserRewards).ThenInclude(r => r.Reward);
-
-            //return dataContext.Orders
-            //          .Include(order => order.OrderProducts)
-            //          .ThenInclude(orderProducts => orderProducts.Product);
-            //var rewards = this.context.UserRewards.Select(r => r.UserId == userId).ToList();
-
-            //var rewards = this.context.UserRewards.Where(r => r.Id == Id).FirstOrDefault()
-
-            //var rewards = this.context.Rewards.Select(u => new User
-            //{
-
-            //}).ToList();
-
-            //var chatroomsWithContent = this.context.Chatrooms.Select(c => new Chatroom
-            //{
-            //    ChatroomName = c.ChatroomName,
-            //    Id = c.Id,
-            //    Messages = c.Messages.OrderBy(s => s.DateOfPost).ToList()
-            //}).ToList();
-
             return userRewards;
         }
 
@@ -336,6 +301,65 @@ namespace StudyB.API.Services
             }
 
             return this.context.Rewards.Where(r => r.Id == rewardId).FirstOrDefault();
+        }
+
+        public bool AddUserReward(Guid rewardId, Guid userId)
+        {
+            if (rewardId == Guid.Empty)
+            {
+                throw new ArgumentNullException(nameof(rewardId));
+            }
+
+            if (userId == Guid.Empty)
+            {
+                throw new ArgumentNullException(nameof(userId));
+            }
+
+            var listofAll = this.context.UserRewards.ToList();
+
+            foreach (var item in listofAll)
+            {
+                if (item.RewardId == rewardId && item.UserId == userId)
+                {
+                    return false;
+                }
+            }
+
+            var userReward = new UserReward
+            {
+                RewardId = rewardId,
+                UserId = userId
+            };
+
+            this.context.UserRewards.Add(userReward);
+
+            return true;
+
+        }
+
+        public IEnumerable<Reward> GetRewardsWithUserId(Guid userId)
+        {
+            if (userId == Guid.Empty)
+            {
+                throw new ArgumentNullException(nameof(userId));
+            }
+
+            var query = from reward in this.context.Rewards
+                        where reward.UserRewards.Any(c => c.UserId == userId)
+                        select reward;
+
+            return query.ToList();
+        }
+
+
+        public bool RewardExist(Guid rewardId)
+        {
+            if (rewardId == Guid.Empty)
+            {
+                throw new ArgumentNullException(nameof(rewardId));
+            }
+
+            return this.context.Rewards.Any(r => r.Id == rewardId);
         }
 
 

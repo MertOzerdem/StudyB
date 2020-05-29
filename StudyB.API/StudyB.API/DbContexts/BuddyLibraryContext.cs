@@ -79,6 +79,8 @@ namespace StudyB.API.DbContexts
                 }
             };
 
+            
+
             var Message = new[]
             {
                 new Message
@@ -175,24 +177,42 @@ namespace StudyB.API.DbContexts
 
             };
 
-            var Reward = new[]
+            var Rewards = new[]
             {
                 new Reward
                 {
-                    Id = Guid.Parse("02b9e886-0291-45d9-8d97-6adc7e63babf"),
-                    RewardName = "Best Admin Ever"
+                    Id = Guid.Parse("8763b3e2-7990-4155-b0ba-e3be6d7bdf6f"),
+                    RewardName = "First 10"
                 },
                 new Reward
                 {
-                    Id = Guid.Parse("e5d9f399-be62-4283-b7c6-81177f71a402"),
-                    RewardName = "Worst Admin Ever"
+                    Id = Guid.Parse("e770d6cf-eaac-4579-9997-cd6b0d35e598"),
+                    RewardName = "Upvoted"
                 },
                 new Reward
                 {
-                    Id = Guid.Parse("118fc971-0831-4207-9b1d-7237bc4271b2"),
-                    RewardName = "Average User" 
+                    Id = Guid.Parse("cb9547a7-52e0-4dad-b9ec-cf2ae31c5ff1"),
+                    RewardName = "Master"
                 }
             };
+            //var Reward = new[]
+            //{
+            //    new Reward
+            //    {
+            //        Id = Guid.Parse("02b9e886-0291-45d9-8d97-6adc7e63babf"),
+            //        RewardName = "Best Admin Ever"
+            //    },
+            //    new Reward
+            //    {
+            //        Id = Guid.Parse("e5d9f399-be62-4283-b7c6-81177f71a402"),
+            //        RewardName = "Worst Admin Ever"
+            //    },
+            //    new Reward
+            //    {
+            //        Id = Guid.Parse("118fc971-0831-4207-9b1d-7237bc4271b2"),
+            //        RewardName = "Average User" 
+            //    }
+            //};
 
             var UserChatroom = new[]
             {
@@ -213,12 +233,12 @@ namespace StudyB.API.DbContexts
                 new UserReward
                 {
                     UserId = Guid.Parse("d28888e9-2ba9-473a-a40f-e38cb54f9b35"),
-                    RewardId = Guid.Parse("118fc971-0831-4207-9b1d-7237bc4271b2")
+                    RewardId = Guid.Parse("8763b3e2-7990-4155-b0ba-e3be6d7bdf6f")
                 },
                 new UserReward
                 {
-                    UserId = Guid.Parse("da2fd609-d754-4feb-8acd-c4f9ff13ba96"),
-                    RewardId = Guid.Parse("02b9e886-0291-45d9-8d97-6adc7e63babf")
+                    UserId = Guid.Parse("d28888e9-2ba9-473a-a40f-e38cb54f9b35"),
+                    RewardId = Guid.Parse("e770d6cf-eaac-4579-9997-cd6b0d35e598")
                 }
             };
 
@@ -226,7 +246,7 @@ namespace StudyB.API.DbContexts
             modelBuilder.Entity<Chatroom>().HasData(Chatroom[0], Chatroom[1], Chatroom[2]);
             modelBuilder.Entity<Message>().HasData(Message[0], Message[1], Message[2], Message[3], Message[4],
                                                    Message[5], Message[6], Message[7], Message[8]);
-            modelBuilder.Entity<Reward>().HasData(Reward[0], Reward[1], Reward[2]);
+            modelBuilder.Entity<Reward>().HasData(Rewards[0], Rewards[1], Rewards[2]);
             modelBuilder.Entity<UserChatroom>().HasData(UserChatroom[0], UserChatroom[1]);
             modelBuilder.Entity<UserReward>().HasData(UserReward[0], UserReward[1]);
 

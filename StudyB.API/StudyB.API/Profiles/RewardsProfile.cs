@@ -12,6 +12,7 @@ namespace StudyB.API.Profiles
         {
             CreateMap<Entities.Reward, Models.RewardDto>();
             CreateMap<Entities.User, Models.UserWithRewardDto>();
+            CreateMap<Models.RewardDto, Entities.Reward >();
         }
     }
 }

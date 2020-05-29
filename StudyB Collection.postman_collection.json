@@ -177,7 +177,7 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:5000/api/chatrooms/77de1f3e-1862-4924-99e2-7a4e52778f80/user",
+					"raw": "http://localhost:5000/api/chatrooms/f8a74b25-a2f4-45d3-8469-343f3e5c6b22/user",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -186,7 +186,7 @@
 					"path": [
 						"api",
 						"chatrooms",
-						"77de1f3e-1862-4924-99e2-7a4e52778f80",
+						"f8a74b25-a2f4-45d3-8469-343f3e5c6b22",
 						"user"
 					]
 				}
@@ -257,6 +257,50 @@
 			"response": []
 		},
 		{
+			"name": "Get Rewards of a user",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5000/api/rewards/d28888e9-2ba9-473a-a40f-e38cb54f9b35/user",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"rewards",
+						"d28888e9-2ba9-473a-a40f-e38cb54f9b35",
+						"user"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get all available reward",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5000/api/rewards/d28888e9-2ba9-473a-a40f-e38cb54f9b35/user",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"rewards",
+						"d28888e9-2ba9-473a-a40f-e38cb54f9b35",
+						"user"
+					]
+				}
+			},
+			"response": []
+		},
+		{
 			"name": "Create a user",
 			"request": {
 				"method": "POST",
@@ -274,7 +318,7 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"userName\": \"a\",\r\n    \"firstName\": \"mahmut\",\r\n    \"lastName\": \"can\",\r\n    \"password\": \"ab\",\r\n    \"email\": \"mahmddasdasdut.can@ug.bilkent.edu.tr\"\r\n}",
+					"raw": "{\r\n    \"userName\": \"dummy\",\r\n    \"firstName\": \"dummya\",\r\n    \"lastName\": \"can\",\r\n    \"password\": \"ab\",\r\n    \"email\": \"dummy.user@ug.bilkent.edu.tr\"\r\n}",
 					"options": {
 						"raw": {}
 					}
@@ -411,6 +455,42 @@
 			"response": []
 		},
 		{
+			"name": "Add reward to a user",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"text\": \"deneme...\",\r\n    \"fileAddress\": null\r\n}",
+					"options": {
+						"raw": {}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5000/api/rewards/cb9547a7-52e0-4dad-b9ec-cf2ae31c5ff1/user/d28888e9-2ba9-473a-a40f-e38cb54f9b35",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"rewards",
+						"cb9547a7-52e0-4dad-b9ec-cf2ae31c5ff1",
+						"user",
+						"d28888e9-2ba9-473a-a40f-e38cb54f9b35"
+					]
+				}
+			},
+			"response": []
+		},
+		{
 			"name": "online user",
 			"request": {
 				"method": "GET",
@@ -469,7 +549,7 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "https://studyb.azurewebsites.net/api/chatrooms/ce446daa-5e35-4f2a-ab83-cf75cac4837e/messages",
+					"raw": "https://studyb.azurewebsites.net/api/chatrooms/c25ed015-3e14-440d-a7c0-7eeedc0cf32b/messages",
 					"protocol": "https",
 					"host": [
 						"studyb",
@@ -479,7 +559,7 @@
 					"path": [
 						"api",
 						"chatrooms",
-						"ce446daa-5e35-4f2a-ab83-cf75cac4837e",
+						"c25ed015-3e14-440d-a7c0-7eeedc0cf32b",
 						"messages"
 					]
 				}
@@ -513,7 +593,7 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "https://studyb.azurewebsites.net/api/chatrooms/77de1f3e-1862-4924-99e2-7a4e52778f80/user",
+					"raw": "https://studyb.azurewebsites.net/api/chatrooms/8ded4df7-4355-41b0-9b44-a9de574bcc48/user",
 					"protocol": "https",
 					"host": [
 						"studyb",
@@ -523,8 +603,31 @@
 					"path": [
 						"api",
 						"chatrooms",
-						"77de1f3e-1862-4924-99e2-7a4e52778f80",
+						"8ded4df7-4355-41b0-9b44-a9de574bcc48",
 						"user"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get messages of a Chatroom Online",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://studyb.azurewebsites.net/api/chatrooms/c25ed015-3e14-440d-a7c0-7eeedc0cf32b/messages",
+					"protocol": "https",
+					"host": [
+						"studyb",
+						"azurewebsites",
+						"net"
+					],
+					"path": [
+						"api",
+						"chatrooms",
+						"c25ed015-3e14-440d-a7c0-7eeedc0cf32b",
+						"messages"
 					]
 				}
 			},
@@ -549,7 +652,7 @@
 					}
 				},
 				"url": {
-					"raw": "https://studyb.azurewebsites.net/api/enroll/c25ed015-3e14-440d-a7c0-7eeedc0cf32b/enrollChatroom/1acf8e02-9be4-428a-bd6b-8dce083bfac3",
+					"raw": "https://studyb.azurewebsites.net/api/enroll/c25ed015-3e14-440d-a7c0-7eeedc0cf32b/enrollChatroom/8ded4df7-4355-41b0-9b44-a9de574bcc48",
 					"protocol": "https",
 					"host": [
 						"studyb",
@@ -561,7 +664,7 @@
 						"enroll",
 						"c25ed015-3e14-440d-a7c0-7eeedc0cf32b",
 						"enrollChatroom",
-						"1acf8e02-9be4-428a-bd6b-8dce083bfac3"
+						"8ded4df7-4355-41b0-9b44-a9de574bcc48"
 					]
 				}
 			},
@@ -630,7 +733,7 @@
 					}
 				},
 				"url": {
-					"raw": "https://studyb.azurewebsites.net/api/messages/c25ed015-3e14-440d-a7c0-7eeedc0cf32b/users/0223c785-650f-41ce-9b4f-16b4f8d81ba6/messages\n",
+					"raw": "https://studyb.azurewebsites.net/api/messages/c25ed015-3e14-440d-a7c0-7eeedc0cf32b/users/8ded4df7-4355-41b0-9b44-a9de574bcc48/messages\n",
 					"protocol": "https",
 					"host": [
 						"studyb",
@@ -642,7 +745,7 @@
 						"messages",
 						"c25ed015-3e14-440d-a7c0-7eeedc0cf32b",
 						"users",
-						"0223c785-650f-41ce-9b4f-16b4f8d81ba6",
+						"8ded4df7-4355-41b0-9b44-a9de574bcc48",
 						"messages\n"
 					]
 				}

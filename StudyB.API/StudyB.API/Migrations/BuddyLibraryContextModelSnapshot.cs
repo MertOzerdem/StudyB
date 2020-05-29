@@ -175,18 +175,18 @@ namespace StudyB.API.Migrations
                     b.HasData(
                         new
                         {
-                            Id = new Guid("02b9e886-0291-45d9-8d97-6adc7e63babf"),
-                            RewardName = "Best Admin Ever"
+                            Id = new Guid("8763b3e2-7990-4155-b0ba-e3be6d7bdf6f"),
+                            RewardName = "First 10"
                         },
                         new
                         {
-                            Id = new Guid("e5d9f399-be62-4283-b7c6-81177f71a402"),
-                            RewardName = "Worst Admin Ever"
+                            Id = new Guid("e770d6cf-eaac-4579-9997-cd6b0d35e598"),
+                            RewardName = "Upvoted"
                         },
                         new
                         {
-                            Id = new Guid("118fc971-0831-4207-9b1d-7237bc4271b2"),
-                            RewardName = "Average User"
+                            Id = new Guid("cb9547a7-52e0-4dad-b9ec-cf2ae31c5ff1"),
+                            RewardName = "Master"
                         });
                 });
 
@@ -315,13 +315,13 @@ namespace StudyB.API.Migrations
                     b.HasData(
                         new
                         {
-                            RewardId = new Guid("118fc971-0831-4207-9b1d-7237bc4271b2"),
+                            RewardId = new Guid("8763b3e2-7990-4155-b0ba-e3be6d7bdf6f"),
                             UserId = new Guid("d28888e9-2ba9-473a-a40f-e38cb54f9b35")
                         },
                         new
                         {
-                            RewardId = new Guid("02b9e886-0291-45d9-8d97-6adc7e63babf"),
-                            UserId = new Guid("da2fd609-d754-4feb-8acd-c4f9ff13ba96")
+                            RewardId = new Guid("e770d6cf-eaac-4579-9997-cd6b0d35e598"),
+                            UserId = new Guid("d28888e9-2ba9-473a-a40f-e38cb54f9b35")
                         });
                 });
 
@@ -358,7 +358,7 @@ namespace StudyB.API.Migrations
             modelBuilder.Entity("StudyB.API.Entities.UserReward", b =>
                 {
                     b.HasOne("StudyB.API.Entities.Reward", "Reward")
-                        .WithMany()
+                        .WithMany("UserRewards")
                         .HasForeignKey("RewardId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();

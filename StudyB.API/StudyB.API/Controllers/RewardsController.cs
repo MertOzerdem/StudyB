@@ -36,5 +36,41 @@ namespace StudyB.API.Controllers
             var rewardFromRepo = this.studyRepository.GetReward(rewardId);
             return Ok(this.mapper.Map<RewardDto>(rewardFromRepo));
         }
+
+        [HttpGet("{userId}/user")]
+        public ActionResult GetAchievedRewards(Guid userId)
+        {
+            var rewardFromRepo = this.studyRepository.GetRewardsWithUserId(userId);
+            return Ok(this.mapper.Map<IEnumerable<RewardDto>>(rewardFromRepo));
+        }
+
+        // AWARD WİTH AN ACHİEVEMENT (add reward)
+        [HttpPost("{rewardId}/user/{userId}")]
+        public ActionResult<ChatroomDto> GetUserReward(Guid rewardId, Guid userId)
+        {
+
+            if (!this.studyRepository.UserExist(userId))
+            {
+                return NotFound();
+            }
+
+            if (!this.studyRepository.RewardExist(rewardId))
+            {
+                return NotFound();
+            }
+
+
+            var returnValue = this.studyRepository.AddUserReward(rewardId, userId);
+            this.studyRepository.Save();
+
+            if (returnValue == true)
+            {
+                return NoContent();
+            }
+
+            return BadRequest();
+        }
+
+
     }
 }

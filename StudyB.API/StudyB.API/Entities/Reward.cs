@@ -13,6 +13,8 @@ namespace StudyB.API.Entities
         public Guid Id { get; set; }
         [MaxLength(40)]
         public string RewardName { get; set; }
+        public ICollection<UserReward> UserRewards { get; set; }
+            = new List<UserReward>();
 
         //// Change later do not seem like a fit here rewards should not keep users that have them
         //[ForeignKey("UserId")]

@@ -41,5 +41,8 @@ namespace StudyB.API.Services
         User GetUsersWithRewards(Guid userId);
         List<Reward> GetRewards();
         Reward GetReward(Guid rewardId);
+        IEnumerable<Reward> GetRewardsWithUserId(Guid userId);
+        bool AddUserReward(Guid rewardId, Guid userId);
+        bool RewardExist(Guid rewardId);
     }
 }
