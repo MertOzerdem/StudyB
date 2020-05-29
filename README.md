@@ -16,6 +16,6 @@
 ###### Postman test and automation scripts: Mert Özerdem  
 ## Back-end Excel documentaion on how to use back-end: Mert Özerdem 
 ###### Request Guide: Mert Özerdem 
-## Back-end Cloud integration: Mert Özerdem
+## Back-end Azure integration: Mert Özerdem
 ###### https://studyb.azurewebsites.net/api/users (example request)
 ###### https://studyb.azurewebsites.net/api (root address)
